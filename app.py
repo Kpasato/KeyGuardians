@@ -172,7 +172,7 @@ def login():
             usercred_collection.update_one({"userid": userid}, {"$set": {"authtoken": hashedtoken}})
 
             response = make_response(redirect(url_for('home')))
-            response.set_cookie('authtoken', str(authtoken), max_age = 60 * 60, httponly=True)
+            response.set_cookie('authtoken', str(authtoken), max_age = 60 * 60, httponly=True, secure=True)
 
             return response
         
@@ -233,7 +233,7 @@ def register():
 
             usercred_collection.insert_one(registered_user)
             response = make_response(redirect(url_for('home')))
-            response.set_cookie('authtoken', str(authtoken), max_age = 60 * 60, httponly=True)
+            response.set_cookie('authtoken', str(authtoken), max_age = 60 * 60, httponly=True, secure=True)
 
             return response
         
