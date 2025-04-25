@@ -161,7 +161,7 @@ def login():
         user = usercred_collection.find_one({"$or": [{"username": safeidentifier},{"email": safeidentifier}]})
 
         if not user:
-            return render_template('login.html', error="username or email not found, please register.")
+            return render_template('login.html', error="credecntials not found")
         
         elif bcrypt.checkpw(password.encode('utf-8'), user["password"].encode('utf-8')):
             userid = user.get("userid")
@@ -177,7 +177,7 @@ def login():
             return response
         
         else:
-            return render_template('login.html', error="Incorrect Password, Please try again")
+            return render_template('login.html', error="credentials not found")
         
     return render_template('login.html')
 
