@@ -73,7 +73,9 @@ Message Page:
 
 
 ### SECURITY RISKS - Break It
+
 ● The authentication cookies did not “Secure” attributes to “true”. Setting them to “true” would ensure that they were only passed through https connections.
+
 ● The database port “27017:27107” was left exposed. This allows unauthenticated remote access to sensitive data unless properly restricted.
 
 
