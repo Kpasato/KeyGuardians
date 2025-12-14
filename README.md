@@ -41,6 +41,7 @@ To use the website, you will need an account
 
 ### DEMONSTRATION - Website Outline
 Sidebar Includes:
+
 ● Account Management Page
 
 ● Message Page
